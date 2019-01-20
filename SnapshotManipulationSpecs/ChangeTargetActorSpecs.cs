@@ -31,7 +31,7 @@ namespace SnapshotManipulationSpecs
 
             // need to wait 6 seconds so the 5 second re-delivery interval has a chance to fire first
             var messages = probe1.ReceiveN(3, TimeSpan.FromSeconds(6)).Cast<ConfirmableDelivery>().Select(x => x.Message).ToArray();
-            messages.Should().BeEquivalentTo("hit1", "hit2", "hit3");
+            messages.Should().Contain("hit1", "hit2", "hit3");
         }
     }
 }
