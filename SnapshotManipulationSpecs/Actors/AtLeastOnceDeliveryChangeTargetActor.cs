@@ -57,6 +57,7 @@ namespace SnapshotManipulationSpecs
                 // delete prior snapshots
                 DeleteSnapshots(new SnapshotSelectionCriteria(success.Metadata.SequenceNr-1));
             });
+            Command<ForceRestart>(_ => throw new ApplicationException("YOLO"));
         }
 
         public override string PersistenceId { get; }

@@ -51,4 +51,13 @@ namespace SnapshotManipulationSpecs
 
         public long DeliveryId { get; }
     }
+
+    /// <summary>
+    /// Force the <see cref="AtLeastOnceDeliveryActor"/> to crash and restart.
+    /// </summary>
+    public sealed class ForceRestart
+    {
+        public static readonly ForceRestart Instance = new ForceRestart();
+        private ForceRestart() { }
+    }
 }
